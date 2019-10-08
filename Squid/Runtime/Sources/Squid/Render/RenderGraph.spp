@@ -1,0 +1,116 @@
+#include "RenderGraph.hpp"
+
+RenderResource &RenderPass::AddAttachmentInput(const std::string &name) {
+    auto &resource = graph.GetTextureResource(name);
+	resource.AddQueue(queue);
+	resource.ReadInPass(index);
+	resource.AddImageUsage(E_INPUT_ATTACHMENT_BIT);
+	attachmentsInputs.push_back(&resource);
+	return resource;
+}
+
+RenderResource &RenderPass::AddColorOutput(const std::string &name, const AttachmentInfo &info, const std::string &input = "") {
+    auto &resource = graph.GetTextureResource(name);
+	resource.AddQueue(queue);
+	resource.WrittenInPass(passIndex);
+	resource.SetAttachmentInfo(info);
+	resource.AddImageUsage(EColorAttachent);
+
+	//if (info.levels != 1)
+	//	res.add_image_usage(VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT);
+
+	colorOutputs.push_back(&resource);
+
+	/*if (!input.empty())
+	{
+		auto &input_res = graph.get_texture_resource(input);
+		input_res.read_in_pass(index);
+		input_res.add_image_usage(VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT);
+		color_inputs.push_back(&input_res);
+		color_scale_inputs.push_back(nullptr);
+	}
+	else
+	{*/
+		colorInputs.push_back(nullptr);
+	//}
+
+	return resource;
+}
+
+void RenderGraph::Validate() {
+    
+    for (auto &pass_ptr : passes)
+	{
+		auto &pass = *pass_ptr;
+
+		if (pass.colorInputs.size() != pass.colorOutputs.size())
+			throw std::logic_error("Size of color inputs must match color outputs.");
+
+		/*if (pass.get_storage_inputs().size() != pass.get_storage_outputs().size())
+			throw std::logic_error("Size of storage inputs must match storage outputs.");
+
+		if (pass.get_blit_texture_inputs().size() != pass.get_blit_texture_outputs().size())
+			throw std::logic_error("Size of storage inputs must match storage outputs.");
+
+		if (pass.get_storage_texture_inputs().size() != pass.get_storage_texture_outputs().size())
+			throw std::logic_error("Size of storage texture inputs must match storage texture outputs.");
+
+		if (!pass.get_resolve_outputs().empty() && pass.get_resolve_outputs().size() != pass.get_color_outputs().size())
+			throw std::logic_error("Must have one resolve output for each color output.");*/
+
+		unsigned numInputs = pass.colorInputs.size();
+		for (unsigned i = 0; i < numInputs; i++)
+		{
+			if (!pass.colorInputs[i])
+				continue;
+
+			//if (get_resource_dimensions(*pass.get_color_inputs()[i]) != get_resource_dimensions(*pass.get_color_outputs()[i]))
+			//	pass.make_color_input_scaled(i);
+		}
+
+		/*if (!pass.get_storage_outputs().empty())
+		{
+			unsigned num_outputs = pass.get_storage_outputs().size();
+			for (unsigned i = 0; i < num_outputs; i++)
+			{
+				if (!pass.get_storage_inputs()[i])
+					continue;
+
+				if (pass.get_storage_outputs()[i]->get_buffer_info() != pass.get_storage_inputs()[i]->get_buffer_info())
+					throw logic_error("Doing RMW on a storage buffer, but usage and sizes do not match.");
+			}
+		}*/
+
+		/*if (!pass.get_blit_texture_outputs().empty())
+		{
+			unsigned num_outputs = pass.get_blit_texture_outputs().size();
+			for (unsigned i = 0; i < num_outputs; i++)
+			{
+				if (!pass.get_blit_texture_inputs()[i])
+					continue;
+
+				if (get_resource_dimensions(*pass.get_blit_texture_inputs()[i]) != get_resource_dimensions(*pass.get_blit_texture_outputs()[i]))
+					throw logic_error("Doing RMW on a blit image, but usage and sizes do not match.");
+			}
+		}*/
+
+		/*if (!pass.get_storage_texture_outputs().empty())
+		{
+			unsigned num_outputs = pass.get_storage_texture_outputs().size();
+			for (unsigned i = 0; i < num_outputs; i++)
+			{
+				if (!pass.get_storage_texture_inputs()[i])
+					continue;
+
+				if (get_resource_dimensions(*pass.get_storage_texture_outputs()[i]) != get_resource_dimensions(*pass.get_storage_texture_inputs()[i]))
+					throw logic_error("Doing RMW on a storage texture image, but sizes do not match.");
+			}
+		}*/
+
+		/*if (pass.depthStencilInput && pass.depthStencilOutput)
+		{
+			if (get_resource_dimensions(*pass.depthStencilInput) != get_resource_dimensions(*pass.depthStencilOutput))
+				throw std::logic_error("Dimension mismatch.");
+		}*/
+	}
+}

@@ -1,0 +1,5 @@
+#define CONSOLE_RED		"\x1b[31m"
+#define CONSOLE_GREEN	"\x1b[32m"
+#define CONSOLE_YELLOW	"\x1b[33m"
+#define CONSOLE_BLUE	"\x1b[34m"
+#define CONSOLE_NONE	"\x1b[0m"

@@ -1,0 +1,28 @@
+﻿Build started 2019. 10. 08. 23:08:28.
+     1>Project "D:\Workspace\CMakeProjects\Squid\Sandbox\Build\vs2019\SquidRuntime.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\SquidRuntime.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX86\x64\CL.exe /c /I..\..\..\Squid\Runtime\Sources /I..\..\..\Squid\Runtime\Backends\Platform\Desktop /I..\..\..\Squid\ThirdParty\SDL2\include /ZI /JMC /nologo /W3 /WX- /diagnostics:column /Od /D SQUID_WIN32 /D SQUID_MICROSOFT /D DEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\\" /Fd"..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\SquidRuntime.pdb" /Gd /TP /FC /errorReport:prompt ..\..\..\Squid\Runtime\Sources\Squid\Launch.cpp
+         Launch.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX86\x64\Lib.exe /OUT:"..\..\..\Squid\Binaries\Debug-windows-x86_64\SquidRuntime\SquidRuntime.lib" ..\..\..\Squid\ThirdParty\SDL2\lib\SDL2.lib ..\..\..\Squid\ThirdParty\SDL2\lib\SDL2main.lib /NOLOGO /MACHINE:X64 "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\DesktopApplication.obj"
+         "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\DesktopWindow.obj"
+         "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\EngineLoop.obj"
+         "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\Launch.obj"
+         "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\RenderDevice.obj"
+         "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\RenderHandle.obj"
+         "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\pch.obj"
+         SquidRuntime.vcxproj -> D:\Workspace\CMakeProjects\Squid\Sandbox\Build\vs2019\..\..\..\Squid\Binaries\Debug-windows-x86_64\SquidRuntime\SquidRuntime.lib
+       CopyFilesToOutputDirectory:
+         Copying file from "D:\Workspace\CMakeProjects\Squid\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\SquidRuntime.pdb" to "D:\Workspace\CMakeProjects\Squid\Squid\Binaries\Debug-windows-x86_64\SquidRuntime\SquidRuntime.pdb".
+       FinalizeBuildStatus:
+         Deleting file "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\SquidRuntime.tlog\unsuccessfulbuild".
+         Touching "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidRuntime\SquidRuntime.tlog\SquidRuntime.lastbuildstate".
+     1>Done Building Project "D:\Workspace\CMakeProjects\Squid\Sandbox\Build\vs2019\SquidRuntime.vcxproj" (Build target(s)).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.27

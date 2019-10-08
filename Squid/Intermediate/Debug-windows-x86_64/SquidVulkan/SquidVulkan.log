@@ -1,0 +1,38 @@
+﻿Build started 2019. 10. 08. 23:08:43.
+     1>Project "D:\Workspace\CMakeProjects\Squid\Sandbox\Build\vs2019\SquidVulkan.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Touching "..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidVulkan\SquidVulkan.tlog\unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX86\x64\CL.exe /c /ID:\SDKs\Vulkan\1.1.114.0\Include /I..\..\..\Squid\Runtime\Sources /ZI /JMC /nologo /W3 /WX- /diagnostics:column /Od /D SQUID_WIN32 /D SQUID_MICROSOFT /D DEBUG /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidVulkan\\" /Fd"..\..\..\Squid\Intermediate\Debug-windows-x86_64\SquidVulkan\vc142.pdb" /Gd /TP /FC /errorReport:prompt ..\..\..\Squid\Runtime\Backends\RDI\Vulkan\VulkanDevice.cpp ..\..\..\Squid\Runtime\Backends\RDI\Vulkan\VulkanRDI.cpp ..\..\..\Squid\Runtime\Backends\RDI\Vulkan\VulkanResource.cpp ..\..\..\Squid\Runtime\Backends\RDI\Vulkan\VulkanSwapchain.cpp
+         VulkanDevice.cpp
+     1>D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanDevice.cpp(163,57): error C2065:  'cmdBuffer': undeclared identifier
+     1>D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanDevice.cpp(195,29): error C2065:  'cmdBuffer': undeclared identifier
+         VulkanRDI.cpp
+         VulkanResource.cpp
+     1>D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanDevice.cpp(204,27): error C2065:  'cmdBuffer': undeclared identifier
+     1>D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanResource.cpp(247,67): warning C4267:  '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+     1>D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanResource.cpp(264,74): warning C4267:  '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+         VulkanSwapchain.cpp
+         Generating Code...
+     1>D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanResource.cpp(272,66): warning C4267:  '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+     1>Done Building Project "D:\Workspace\CMakeProjects\Squid\Sandbox\Build\vs2019\SquidVulkan.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+       "D:\Workspace\CMakeProjects\Squid\Sandbox\Build\vs2019\SquidVulkan.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanResource.cpp(247,67): warning C4267:  '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+         D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanResource.cpp(264,74): warning C4267:  '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+         D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanResource.cpp(272,66): warning C4267:  '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+
+
+       "D:\Workspace\CMakeProjects\Squid\Sandbox\Build\vs2019\SquidVulkan.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanDevice.cpp(163,57): error C2065:  'cmdBuffer': undeclared identifier
+         D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanDevice.cpp(195,29): error C2065:  'cmdBuffer': undeclared identifier
+         D:\Workspace\CMakeProjects\Squid\Squid\Runtime\Backends\RDI\Vulkan\VulkanDevice.cpp(204,27): error C2065:  'cmdBuffer': undeclared identifier
+
+    3 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:00:03.69
